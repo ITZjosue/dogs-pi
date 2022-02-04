@@ -2,8 +2,6 @@
 
 #
 
-<img src='./dog.png' />
-
 <p>Tecnologías usadas:</p> 
   <li>Front: React, Redux, Styled-components
   <li>Back: NodeJs, Express, Sequelize
