@@ -22,12 +22,17 @@ export function za(a,b){
     return 0
 }
 
-export function MayMen(a,b){
-    let weightA = a.weight.split(' - ')
-    let weightB = b.weight.split(' - ')
+function averageWeight(weight){
+    let numbers = String(weight).match(/\d+(\.\d+)?/g)
+    if(!numbers){
+        return NaN
+    }
+    return numbers.reduce((acc, n) => acc + Number(n), 0) / numbers.length
+}
 
-    let sumA = (Number(weightA[0]) + Number(weightA[1]))/2
-    let sumB = (Number(weightB[0]) + Number(weightB[1]))/2
+export function MayMen(a,b){
+    let sumA = averageWeight(a.weight)
+    let sumB = averageWeight(b.weight)
 
     if(sumA > sumB){
         return 1
@@ -39,11 +44,8 @@ export function MayMen(a,b){
 }
 
 export function MenMay(a,b){
-    let weightA = a.weight.split(' - ')
-    let weightB = b.weight.split(' - ')
-
-    let sumA = (Number(weightA[0]) + Number(weightA[1]))/2
-    let sumB = (Number(weightB[0]) + Number(weightB[1]))/2
+    let sumA = averageWeight(a.weight)
+    let sumB = averageWeight(b.weight)
 
     if(sumA > sumB){
         return -1

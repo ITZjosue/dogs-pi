@@ -1,8 +1,9 @@
 // BACKEND ROUTES
+const url = 'http://localhost:3001'
 
-export const DOGS = `https://dogdpi-back.herokuapp.com/dogs`
-export const DOG = `https://dogdpi-back.herokuapp.com/dog`
-export const TEMPERAMENT = `https://dogdpi-back.herokuapp.com/temperament`
+export const DOGS = `${url}/dogs`
+export const DOG = `${url}/dog`
+export const TEMPERAMENT = `${url}/temperament`
 
 // REACT ROUTER ROUTES
 

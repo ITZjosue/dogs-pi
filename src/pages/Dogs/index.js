@@ -122,14 +122,16 @@ const Dogs =({DOGS,dispatch, loading, setLoading})=>{
     const handleWeight = async (e)=>{
         const { value } = e.target
 
+        console.log(value)
+        console.log(dogs)
         setLoading(true)
         if(value === 'l-h'){
-            let sortedWeight = filterDogs.length?filterDogs.sort(MayMen):dogs.sort(MayMen)
-            dispatch(getDogs(sortedWeight))
+          let sortedWeight = filterDogs.length > 0 ? filterDogs.sort(MenMay) : dogs.sort(MenMay)
+          dispatch(getFilterDogs(sortedWeight))
         }
         if(value === 'h-l'){
-            let sortedWeight = filterDogs.length?filterDogs.sort(MenMay):dogs.sort(MenMay)
-            dispatch(getDogs(sortedWeight))
+          let sortedWeight = filterDogs.length > 0 ? filterDogs.sort(MayMen) : dogs.sort(MayMen)
+          dispatch(getFilterDogs(sortedWeight))
         } 
         if(value === '--'){
             if(filterDogs.length){
